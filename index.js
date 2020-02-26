@@ -23,10 +23,6 @@ inquirer
     message: "What is your project description?",
     name: "Description"
 },
-//{ 
-//    type: some value for an array that lists username, email, projectitle, description, installation, usage, license, and collaborators
-//    name: "TableofContents" 
-//},
 {
     type: "input",
     message: "What is the installation process for your application?",
@@ -39,7 +35,7 @@ inquirer
 },
 {
     type: "input",
-    message: "What is the license of your application (i.e. open source/public domain, copyright)",
+    message: "What is the license of your application (i.e. open source/public domain, etc.)",
     name: "License"
 },
 {
@@ -63,7 +59,6 @@ axios.get(queryURL).then(function(res){
             "Email address:", Email, "\n",
             "Project Title: ", ProjectTitle, "\n",
             "Project Description", Description, "\n",
-            "Table of Contents", "\n",
             "Installation process: ", Installation, "\n",
             "Uses for this app: ", Usage, "\n",
             "License for this app: ", License, "\n",
