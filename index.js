@@ -47,7 +47,28 @@ inquirer
 
 .then(function({username, Email, ProjectTitle, ProjectDescription, installation, Use, license, contributors}){
     const queryURL = `https://api.github.com/users/${username}`;
-
+    axios.get(queryURL).then(function(res){
+        const avatar = res.data.avatar_url;
+        const userEmail = res.data.email;
     let displayAvatar = "<img src=`" + avatar + "`/>"
+        console.log(Email);
+        let readMeInput = [
+            "Name: ", username, "\n",
+            "Image: ", displayAvatar, "\n",
+            "Email address:", Email, "\n",
+            "Project Title: ", ProjectTitle, "\n",
+            "Table of Contents", "\n",
+            "Installation process: ", installation, "\n",
+            "Uses for this app: ", use, "\n",
+            "License for this app: ", license, "\n",
+            "Contributors: ", contributors, "\n",
+        ]
 
-})
+    fs.writeFile("README.md", infoData.join(""), function (err) {
+        if (err) {
+        throw err;
+            }
+
+        });
+    });
+});
