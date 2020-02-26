@@ -25,6 +25,11 @@ inquirer
 },
 {
     type: "input",
+    message: "What is the installation process for your application?",
+    name: "installation"
+},
+{
+    type: "input",
     message: "What is your project used for?",
     name: "Use"
 },
@@ -39,3 +44,10 @@ inquirer
     name: "contributors"
 }]
 )
+
+.then(function({username, Email, ProjectTitle, ProjectDescription, installation, Use, license, contributors}){
+    const queryURL = `https://api.github.com/users/${username}`;
+
+    let displayAvatar = "<img src=`" + avatar + "`/>"
+
+})
