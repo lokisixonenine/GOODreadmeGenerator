@@ -1,7 +1,41 @@
 const inquirer = require("inquirer");
     const axios = require("axios");
     const fs = require("fs");
-    async function main(){
-        console.log(`newReadme`);
-        
-    }
+
+inquirer
+.prompt([{
+    type: "input",
+    message: "What is your GitHub username?",
+    name: "username"
+},
+{
+    type: "input",
+    message: "What is your GitHub email address?",
+    name: "Email"
+},
+{
+    type: "input",
+    message: "What is the title of your project?",
+    name: "ProjectTitle"
+},
+{
+    type: "input",
+    message: "What is your project description?",
+    name: "ProjectDescription"
+},
+{
+    type: "input",
+    message: "What is your project used for?",
+    name: "Use"
+},
+{
+    type: "input",
+    message: "What is the license of your application (i.e. open source/public domain, copyright)",
+    name: "license"
+},
+{
+    type: "input",
+    message: "Who are the contributors to this project?",
+    name: "contributors"
+}]
+)
